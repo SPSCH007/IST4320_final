@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[20]:
+# In[24]:
 
 
 import tkinter as tk
@@ -166,7 +166,7 @@ def stats(result):
     2. Ensure that the proper table is created if doesn't exist
     3. Insert the result of the game into a new row of the table
     '''
-    # Create a SQLite database
+    # Connect to the SQLite database
     sql_connect = sqlite3.connect('stat.db')
     cursor = sql_connect.cursor() 
     
@@ -253,6 +253,10 @@ def load_frame3():
     clear_widgets(frame1) # Clear all the Main menu widgets
     frame3.tkraise() # Raise frame 3 to the top level
 
+    # Create a SQLite database
+    sql_connect = sqlite3.connect('stat.db')
+    cursor = sql_connect.cursor() 
+    
     # Header image
     card_img = Image.open("PNG-cards-1.3/ace_of_hearts.png").resize((250, 363))
     card_img_tk = ImageTk.PhotoImage(card_img)
@@ -339,8 +343,8 @@ main.mainloop()
 
 
 #Thank you to 
-#https://www.youtube.com/watch?v=5qOnzF7RsNA
-#https://www.youtube.com/watch?v=UP_kOuCz88A
+# Python Simplified: How to use frames: https://www.youtube.com/watch?v=5qOnzF7RsNA
+# Tkinter.com: How to add images to apps: https://www.youtube.com/watch?v=UP_kOuCz88A
 
 
 # In[ ]:
